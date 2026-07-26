@@ -1,0 +1,8 @@
+bin
+obj
+pipelines/welcomer/output.png
+.env
+.dev
+WelcomeBot.csproj.bak
+WelcomeBot
+publish
