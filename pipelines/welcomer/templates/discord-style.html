@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --blurple: #5865f2;
+            --green: #23a55a;
+            --card: #26262e;
+            --bg: #1c1d23;
+            --text: #e4e5e8;
+            --muted: #949ba4
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            width: 1000px;
+            height: 400px;
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            width: 920px;
+            height: 300px;
+            background: var(--card);
+            border-radius: 14px;
+            display: flex;
+            overflow: hidden
+        }
+
+        .accent {
+            width: 6px;
+            background: var(--blurple)
+        }
+
+        .body {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 38px;
+            padding: 0 46px
+        }
+
+        .avatar-wrap {
+            position: relative;
+            flex-shrink: 0
+        }
+
+        .avatar {
+            width: 132px;
+            height: 132px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--green)
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .status {
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+            width: 30px;
+            height: 30px;
+            background: var(--green);
+            border: 5px solid var(--card);
+            border-radius: 50%
+        }
+
+        .main {
+            flex: 1;
+            min-width: 0
+        }
+
+        .sysline {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 12px
+        }
+
+        .sysline i {
+            color: var(--green);
+            font-size: 15px
+        }
+
+        .headline {
+            font-size: 36px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -.6px
+        }
+
+        .headline .name {
+            color: #a4b6ff;
+            background: rgba(88, 101, 242, .16);
+            padding: 0 8px;
+            border-radius: 6px;
+            font-size: .75em;
+            vertical-align: middle
+        }
+
+        .subline {
+            margin-top: 10px;
+            font-size: 16px;
+            color: var(--text);
+            max-width: 470px
+        }
+
+        .subline .chan {
+            color: #a4b6ff;
+            background: rgba(88, 101, 242, .14);
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-weight: 600
+        }
+
+        .fields {
+            margin-top: 22px;
+            display: flex;
+            gap: 34px
+        }
+
+        .field {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 13.5px;
+            color: var(--muted);
+            font-weight: 600
+        }
+
+        .field i {
+            color: var(--blurple);
+            font-size: 16px
+        }
+
+        .rail {
+            width: 168px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            border-left: 1px solid rgba(255, 255, 255, .07)
+        }
+
+        .rail i {
+            font-size: 22px;
+            color: var(--green);
+            margin-bottom: 4px
+        }
+
+        .rail .num {
+            font-size: 32px;
+            font-weight: 800;
+            color: #fff
+        }
+
+        .rail .lbl {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: .06em
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="accent"></div>
+        <div class="body">
+            <div class="avatar-wrap">
+                <div class="avatar"><img src="{{AVATAR_URL}}"></div>
+                <div class="status"></div>
+            </div>
+            <div class="main">
+                <div class="sysline"><i class='bx bx-meteor'></i> just wandered in {{SERVER_NAME}}</div>
+                <div class="headline">Welcome, <span class="name">{{USERNAME}}</span></div>
+                <div class="subline">Grab a role in <span class="chan">#roles</span>, say hi in <span
+                        class="chan">#general</span>, read the <span class="chan">#rules</span> whenever.</div>
+                <div class="fields">
+                    <div class="field"><i class='bx bx-right-arrow-alt'></i> joined & verified</div>
+                    <div class="field"><i class='bx bx-right-arrow-alt'></i> start in #roles</div>
+                </div>
+            </div>
+            <div class="rail">
+                <i class='bx bx-user-plus'></i>
+                <div class="num">{{MEMBER_COUNT}}</div>
+                <div class="lbl">Members</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
